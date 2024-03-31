@@ -157,7 +157,7 @@ class EmployeeController extends Controller
         'age' => 'required|numeric',
         ], $messages);
         if ($validator->fails()) {
-            return redirect()->back()->withErrors($validator)->withInput();
+            return redirect()->route('employees.index')->with('Berhasil', 'Data Berhasil DiUpdate');
         }
         // UPDATE QUERY
         DB::table('employees')
